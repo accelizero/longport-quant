@@ -59,3 +59,21 @@ sh scripts/install_talib.sh
 4. 仍失败时，在 Alpine 中安装编译工具，再执行 TA-Lib 源码安装。
 
 注意：备用脚本可能会修改 `pyproject.toml` 和 `uv.lock`，执行后应检查并提交这两个文件。生产部署时应固定 Python/平台，优先保留并使用 `uv.lock`。
+
+## 批量查询日 K 与均线
+
+```python
+from longport_quant.indicators import get_daily_ma
+
+results = get_daily_ma(["MSTR", "AAPL.US", "TSLA"])
+for result in results:
+    print(result.symbol, result.close, result.ma20, result.ma50, result.ma200)
+```
+
+未带市场后缀的代码默认按美股处理；也可以直接传入 `AAPL.US`、`700.HK` 等完整代码。
+
+历史 K 线接口官方限制为 **30 秒最多 60 次请求**，因此代码默认使用 `request_interval=0.5` 秒。批量查询会复用一个 `QuoteContext`，但每只股票仍需单独请求历史 K 线。
+
+官方文档：
+- [Historical Candlesticks](https://open.longportapp.com/docs/quote/pull/history-candlestick)
+- [Python SDK](https://longportapp.github.io/openapi/python/index.html)
