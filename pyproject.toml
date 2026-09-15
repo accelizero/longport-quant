@@ -1,0 +1,27 @@
+[project]
+name = "longport-quant"
+version = "0.1.0"
+description = "LongPort market data and quantitative analysis toolkit"
+readme = "README.md"
+authors = [
+    { name = "accelizero", email = "accelizero@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "longport>=4.3.7",
+    "numpy>=2.5.3",
+    "ta-lib>=0.8.0",
+]
+
+[project.scripts]
+longport-quant = "longport_quant:main"
+
+[build-system]
+requires = ["uv_build>=0.12.14,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.7",
+]
