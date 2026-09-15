@@ -56,6 +56,7 @@ dependencies = [
     { name = "longport" },
     { name = "numpy" },
     { name = "ta-lib" },
+    { name = "tqdm" },
 ]
 
 [package.dev-dependencies]
@@ -69,6 +70,7 @@ requires-dist = [
     { name = "longport", specifier = ">=4.3.7" },
     { name = "numpy", specifier = ">=2.5.3" },
     { name = "ta-lib", specifier = ">=0.8.0" },
+    { name = "tqdm", specifier = ">=4.70.1" },
 ]
 
 [package.metadata.requires-dev]
@@ -254,4 +256,16 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/4f/81/5946dfebac139e35dd0e0de116900e634153ab5297baec932111831e0538/ta_lib-0.8.0-cp314-cp314-win32.whl", hash = "sha256:f71b2b3f06c44cd0988754d127402bbfdc1492f94028400b3cec69e89a83a1b1", size = 988891, upload-time = "2026-09-13T22:44:10.318Z" },
     { url = "https://files.pythonhosted.org/packages/de/fb/aa33a069613d723d32d06b9a3b5c354a0745cbc24e2d659aa79fbbebba7b/ta_lib-0.8.0-cp314-cp314-win_amd64.whl", hash = "sha256:85cd66c1b36a7112aaf23dfd6ce088248900e534ab2fbc06e2ef835ef70d4284", size = 1157153, upload-time = "2026-09-13T22:44:07.111Z" },
     { url = "https://files.pythonhosted.org/packages/ae/24/54545e4011948297b4195efea85502bb70cb4273d4a689853f15eaf5eb63/ta_lib-0.8.0-cp314-cp314-win_arm64.whl", hash = "sha256:b521afde0d8620609d6a61d10d2c298154f345e57ce21304b54dd865bc72dc8d", size = 970036, upload-time = "2026-09-13T22:44:08.696Z" },
+]
+
+[[package]]
+name = "tqdm"
+version = "4.70.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "colorama", marker = "sys_platform == 'win32'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz", hash = "sha256:cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4", size = 171846, upload-time = "2026-09-11T07:25:16.601Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl", hash = "sha256:c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73", size = 80199, upload-time = "2026-09-11T07:25:14.599Z" },
 ]

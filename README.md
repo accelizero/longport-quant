@@ -77,3 +77,25 @@ for result in results:
 官方文档：
 - [Historical Candlesticks](https://open.longportapp.com/docs/quote/pull/history-candlestick)
 - [Python SDK](https://longportapp.github.io/openapi/python/index.html)
+
+## QQQ 成分股批量筛选
+
+筛选条件：
+
+```text
+Price > MA20 > MA50 > MA200
+```
+
+运行程序：
+
+```bash
+uv run python -m longport_quant.screen_qqq
+```
+
+程序读取 `qqq_symbols.txt`，显示 `tqdm` 进度条，并将符合条件的结果逐条追加到：
+
+```text
+qqq_price_above_ma.txt
+```
+
+每条记录包括股票代码、最新日 K 时间、Price、MA20、MA50 和 MA200。单只股票请求失败时会记录提示并继续处理其他股票；已经筛选出的结果会立即写入并刷新文件，避免后续错误导致结果全部丢失。

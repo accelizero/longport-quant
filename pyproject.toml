@@ -11,6 +11,7 @@ dependencies = [
     "longport>=4.3.7",
     "numpy>=2.5.3",
     "ta-lib>=0.8.0",
+    "tqdm>=4.70.1",
 ]
 
 [project.scripts]
